@@ -17,12 +17,13 @@ class Main extends React.Component {
     })
     .done((data) => {
       this.setState({
-        planetData: data.result,
-        planetName: data.result
+        planetData: {},
+        planetName: []
       })
     });
   }
 
+  const planetArr = data.results.map((p))
 
 
   render() {
