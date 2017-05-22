@@ -5,28 +5,39 @@ class Main extends React.Component {
 
   constructor() {
     super();
-
     this.state = {
-      planetData: []
+      planetData: [],
+      planetName: []
     }
   }
 
   componentDidMount() {
     $.ajax({
       url: 'http://swapi.co/api/planets'
-    });
-    done((data) => {
-      this.state({
-        planetData: data.results
-
+    })
+    .done((data) => {
+      this.setState({
+        planetData: data.result,
+        planetName: data.result
       })
     });
   }
 
+
+
   render() {
+    let planetName = planetData.map((results) => {
+      return
+      <ul>
+        <li>{results.name}</li>
+      </ul>
+    });
+
     return (
       <div className="main">
-        <h1>PLANTS GO HERE</h1>
+          <ul>
+            <li>{planetName}</li>
+          </ul>
       </div>
     );
   }
