@@ -24,8 +24,16 @@
 }
 
 .side-bar {
+  border: 3px solid gray;
+  display: inline-block;
+  float: left;
+  margin: 0 auto;
   width: 20%;
 }
 .main {
-  width: 80%;
+  border: 3px solid gray;
+  display: inline-block;
+  float: right;
+  margin: 0 auto;
+  width: 79%;
 }
