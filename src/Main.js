@@ -6,7 +6,8 @@ class Main extends React.Component {
   constructor() {
     super();
     this.state = {
-      planetNames: []
+      planetNames: [],
+      names: []
     }
   }
 
@@ -15,20 +16,19 @@ class Main extends React.Component {
       url: 'http://swapi.co/api/planets'
     })
     .done((data) => {
-      // const planetData = data.results.map((names))
-      this.setState({
-        planetNames: []
+      var planetNames = data.results.map(function(result) {
+        console.log('Planet: ', result.name)
       })
+
     });
   }
 
-
-
   render() {
+
     return (
       <div className="main">
           <ul>
-            <li>more stuff</li>
+            <li>stuff</li>
           </ul>
       </div>
     );
