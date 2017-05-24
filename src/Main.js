@@ -16,19 +16,25 @@ class Main extends React.Component {
       url: 'http://swapi.co/api/planets'
     })
     .done((data) => {
-      var planetNames = data.results.map(function(result) {
-        console.log('Planet: ', result.name)
-      })
+      var planetNames = data.results
 
     });
   }
 
   render() {
 
+    let list = this.state.planetData.map((planet) => {
+        return (
+          <ul>
+            <li>{planet.date}</li>
+          </ul>
+      )
+      });
+
     return (
       <div className="main">
           <ul>
-            <li>stuff</li>
+            <li>{list}</li>
           </ul>
       </div>
     );
